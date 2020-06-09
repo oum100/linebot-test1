@@ -8,16 +8,14 @@ const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
-    let line_body = req.body;
-    console.log(line_body);
-    console.log();
-    let line_event = req.body.events[0];
-    console.log(line_event);
+    console.log(req.body);
+    console.log(req.body.events);
     let reply_token = req.body.events[0].replyToken;
     reply(reply_token);
     res.sendStatus(200);
 })
 app.listen(port)
+
 function reply(reply_token) {
     let headers = {
         'Content-Type': 'application/json',
