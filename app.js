@@ -10,8 +10,9 @@ app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken;
     let lineevent = req.body;
-    console.log(lineevent,"\n");
-    console.log(lineevent.events[0],"\n");
+    console.log(lineevent);
+    console.log();
+    console.log(lineevent.events[0]);
     reply(reply_token);
     res.sendStatus(200);
 })
