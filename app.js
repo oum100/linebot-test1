@@ -74,6 +74,7 @@ function reply(reply_token,menu) {
         })
     }
 
+    console.log(body);
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
         headers: headers,
