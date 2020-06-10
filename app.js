@@ -35,48 +35,17 @@ function reply(reply_token,menu) {
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
 
-    let body;
-    if(menu==1){
-        body = JSON.stringify({
-            replyToken: reply_token,
-            messages: [{
-                type: 'text',
-                text: 'กำลังใช้เครื่องไหนบ้างคะ (Which machine you using?)'
-            },
-            {
-                type: 'text',
-                text: 'เช่น 93 100 (Ex. 93 100)'
-            }]
-        })
-    }
-
-    if(menu==3){
-        body = JSON.stringify({
-            replyToken: reply_token,
-            messages: [{
-                type: 'text',
-                text: 'จองเครื่องไหนบ้างคะ (Which machine would like to book?)'
-            },
-            {
-                type: 'text',
-                text: 'เช่น 93 100 (Ex. 93 100)'
-            }]
-        })
-    }
-    
-    if(menu==3){
-        body = JSON.stringify({
-            replyToken: reply_token,
-            messages: [{
-                type: 'text',
-                text: 'กำลังใช้เครื่องไหนบ้างคะ (Which machine you using?)'
-            },
-            {
-                type: 'text',
-                text: 'เช่น 93 100 (Ex. 93 100)'
-            }]
-        })
-    }   
+    let body = JSON.stringify({
+        replyToken: reply_token,
+        messages: [{
+            type: 'text',
+            text: 'กำลังใช้เครื่องไหนบ้างคะ (Which machine you using?)'
+        },
+        {
+            type: 'text',
+            text: 'เช่น 93 100 (Ex. 93 100)'
+        }]
+    })
 
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
