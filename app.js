@@ -24,7 +24,7 @@ app.post('/webhook', (req, res) => {
     if(menu_msg[0]==3) 
         console.log("Menu: "+ menu_msg[0]);            
 
-    reply(reply_token,menu_msg);
+    reply(reply_token,menu_msg[0]);
     res.sendStatus(200);
 })
 app.listen(port)
@@ -48,13 +48,6 @@ function reply(reply_token,menu) {
                 text: 'เช่น 93 100 (Ex. 93 100)'
             }]
         })
-        request.post({
-            url: 'https://api.line.me/v2/bot/message/reply',
-            headers: headers,
-            body: body
-        }, (err, res, body) => {
-            console.log('status = ' + res.statusCode);
-        });
     }
 
     if(menu == 2){
@@ -69,29 +62,22 @@ function reply(reply_token,menu) {
                 text: 'เช่น 93 100 (Ex. 93 100)'
             }]
         })
-        request.post({
-            url: 'https://api.line.me/v2/bot/message/reply',
-            headers: headers,
-            body: body
-        }, (err, res, body) => {
-            console.log('status = ' + res.statusCode);
-        });
     }
 
     if(menu == 3){
-        let body = JSON.stringify({
+        body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
                 text: 'กรุณารอสักครู่ (Wait a minute.)'
             }]
         })
-        request.post({
-            url: 'https://api.line.me/v2/bot/message/reply',
-            headers: headers,
-            body: body
-        }, (err, res, body) => {
-            console.log('status = ' + res.statusCode);
-        });
     }
+    request.post({
+        url: 'https://api.line.me/v2/bot/message/reply',
+        headers: headers,
+        body: body
+    }, (err, res, body) => {
+        console.log('status = ' + res.statusCode);
+    });
 }
