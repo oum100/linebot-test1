@@ -48,6 +48,13 @@ function reply(reply_token,menu) {
                 text: 'เช่น 93 100 (Ex. 93 100)'
             }]
         })
+        request.post({
+            url: 'https://api.line.me/v2/bot/message/reply',
+            headers: headers,
+            body: body
+        }, (err, res, body) => {
+            console.log('status = ' + res.statusCode);
+        });
     }
 
     if(menu == 2){
@@ -62,24 +69,29 @@ function reply(reply_token,menu) {
                 text: 'เช่น 93 100 (Ex. 93 100)'
             }]
         })
+        request.post({
+            url: 'https://api.line.me/v2/bot/message/reply',
+            headers: headers,
+            body: body
+        }, (err, res, body) => {
+            console.log('status = ' + res.statusCode);
+        });
     }
 
     if(menu == 3){
-        body = JSON.stringify({
+        let body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
                 text: 'กรุณารอสักครู่ (Wait a minute.)'
             }]
         })
+        request.post({
+            url: 'https://api.line.me/v2/bot/message/reply',
+            headers: headers,
+            body: body
+        }, (err, res, body) => {
+            console.log('status = ' + res.statusCode);
+        });
     }
-
-    console.log(body);
-    request.post({
-        url: 'https://api.line.me/v2/bot/message/reply',
-        headers: headers,
-        body: body
-    }, (err, res, body) => {
-        console.log('status = ' + res.statusCode);
-    });
 }
