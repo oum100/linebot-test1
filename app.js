@@ -12,6 +12,7 @@ app.post('/webhook', (req, res) => {
     console.log();
     console.log(req.body.events);
     let reply_token = req.body.events[0].replyToken;
+    console.log(reply_token);
     reply(reply_token);
     res.sendStatus(200);
 })
@@ -26,11 +27,11 @@ function reply(reply_token) {
         replyToken: reply_token,
         messages: [{
             type: 'text',
-            text: 'Hello'
+            text: 'กำลังใช้เครื่องไหนบ้างคะ (Which machine you using?)'
         },
         {
             type: 'text',
-            text: 'How are you?'
+            text: 'เช่น 93 100 (Ex. 93 100)'
         }]
     })
     request.post({
