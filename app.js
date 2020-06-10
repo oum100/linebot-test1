@@ -11,8 +11,12 @@ app.post('/webhook', (req, res) => {
     console.log(req.body);
     console.log();
     console.log(req.body.events);
+
     let reply_token = req.body.events[0].replyToken;
+
+    console.log();
     console.log(reply_token);
+    
     reply(reply_token);
     res.sendStatus(200);
 })
