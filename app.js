@@ -13,10 +13,14 @@ app.post('/webhook', (req, res) => {
     console.log(req.body.events);
 
     let reply_token = req.body.events[0].replyToken;
+    let menu_msg = req.body.events[0].message.text;
 
     console.log();
-    console.log(reply_token);
-    
+    console.log(menu_msg);
+
+    if(menu_msg[0]==1) 
+        console.log(menu_msg);
+
     reply(reply_token);
     res.sendStatus(200);
 })
