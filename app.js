@@ -15,10 +15,6 @@ app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken;
     let menu_msg = req.body.events[0].message.text;
 
-    console.log();
-    console.log(menu_msg[0]);
-    console.log(menu_msg);
-
     if(menu_msg[0]==1) 
         console.log("Menu: "+ menu_msg[0]);
 
@@ -39,8 +35,9 @@ function reply(reply_token,menu) {
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
 
+    let body;
     if(menu==1){
-        let body = JSON.stringify({
+        body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
@@ -54,7 +51,7 @@ function reply(reply_token,menu) {
     }
 
     if(menu==3){
-        let body = JSON.stringify({
+        body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
@@ -68,7 +65,7 @@ function reply(reply_token,menu) {
     }
     
     if(menu==3){
-        let body = JSON.stringify({
+        body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
@@ -80,6 +77,7 @@ function reply(reply_token,menu) {
             }]
         })
     }   
+
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
         headers: headers,
