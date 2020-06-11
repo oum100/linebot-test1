@@ -17,7 +17,7 @@ app.post('/webhook', (req, res) => {
     let uid = req.body.events[0].source.userId;
 
     console.log(menu_msg);
-    let dispname = getdispname(uid);
+    console.log(getdispname(uid));
     reply(reply_token,menu_msg,'Teerin');
     res.sendStatus(200);
 })
@@ -71,21 +71,24 @@ function reply(reply_token,menu,uname) {
 }
 
 function getdispname(uid){
+    let dispName ="";
+    let body="";
+    let obj;
+
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
-    let dispName ="";
-    let body="";
-    let obj;
+
     request.get({
-        url:'https://api.line.me/v2/bot/profile/'+uid,
-        headers: headers,
-        body: body
-    }, (err, res, body) => {
-        console.log('status: ' + res.statusCode);
-        obj = JSON.parse(res.body);
-        dispName = obj.displayName;
-    });
-    console.log(dispName);
+            url:'https://api.line.me/v2/bot/profile/'+uid,
+            headers: headers,
+            body: body
+        }, async (err, res, body) => {
+            obj = await JSON.parse(res.body);
+            dispName = obj.displayName;
+            console.log('status: ' + res.statusCode);
+        }
+    );
+    return dispName;
 }
