@@ -82,6 +82,6 @@ function getdispname(uid){
         body: body
     }, (err, res, body) => {
         console.log('status: ' + res.statusCode);
+        return res.body.displayName;
     });
-    return res.body.displayName;
 }
