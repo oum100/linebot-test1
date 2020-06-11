@@ -35,14 +35,14 @@ function reply(reply_token,menu,uname) {
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
     let body="";
-    // switch (true){
-    //     case menu[0] == "N" || menu[0]== "n":
-    //         console.log('print N');
-    //         break;
-    //     case menu[0] == "B" || menu[0]== "b":   
-    //         console.log('print B');
-    //         break;
-    // }
+    switch (true){
+        case menu[0] == "N" || menu[0]== "n":
+            console.log('print N');
+            break;
+        case menu[0] == "B" || menu[0]== "b":   
+            console.log('print B');
+            break;
+    }
 
     if(menu[0] == "N" || menu[0] == "n"){
         let assetid = menu.substr(1,3);
