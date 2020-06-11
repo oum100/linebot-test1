@@ -25,7 +25,7 @@ app.post('/webhook', (req, res) => {
     });
     
 
-    reply(reply_token,menu_msg,uname);
+    //reply(reply_token,menu_msg,uname);
     res.sendStatus(200);
 })
 app.listen(port)
