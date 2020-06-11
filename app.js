@@ -17,8 +17,8 @@ app.post('/webhook', (req, res) => {
     let uid = req.body.events[0].source.userId;
 
     console.log(menu_msg);
-    
-    reply(reply_token,menu_msg,getdispname(uid));
+    let dispname = getdispname(uid);
+    reply(reply_token,menu_msg,dispname);
     res.sendStatus(200);
 })
 app.listen(port)
