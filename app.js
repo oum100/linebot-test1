@@ -36,7 +36,7 @@ function reply(reply_token,menu,uname) {
     }
     let body="";
     let msgtxt = "";
-    let assetid = menu.substr(1,3);
+    let assetid = menu.substr(1);
     if(Number(assetid)){
         switch (true){
             case menu[0] == "N" || menu[0]== "n":
