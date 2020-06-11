@@ -3,6 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
+const rp = require('request-promise')
 const app = express()
 const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -18,7 +19,7 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log(menu_msg);
-    console.log('getdisplayname: '+ getdispname(uid));
+    console.log('getdisplayname: '+ getdispname(uid,callback));
 
     reply(reply_token,menu_msg,"Hello");
     res.sendStatus(200);
@@ -82,7 +83,7 @@ function getdispname(uid,callback){
             'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
         }
     }       
-    request(options,async (err,res) => {
+    rp(options,async (err,res) => {
         if(res.statusCode == 200){
             console.log('GetdisplayName Status: ' + res.statusCode);
             console.log('displayname: ' + await JSON.parse(res.body).displayName);
