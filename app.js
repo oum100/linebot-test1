@@ -82,9 +82,9 @@ function getdispname(uid,callback){
             headers: headers
         }, (err, res, body) => {
             if(res.statusCode == 200){
-                let obj = JSON.parse(res.body.displayName);
+                let obj = JSON.parse(res.body);
                 //console.log('status: ' + res.statusCode);
-                callback(err,obj);
+                callback(err,obj.displayName);
             }else{
                 callback(err || ': Expected 200 status, received: ' + res.statusCode + '\n' + res.body);
             }
