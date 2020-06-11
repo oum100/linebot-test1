@@ -86,6 +86,6 @@ function getdispname(uid){
         const obj = JSON.parse(res.body);
         dispName = obj.displayName;
         console.log(dispName);
-        return dispName;
+        return 555;
     });
 }
