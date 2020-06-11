@@ -72,6 +72,7 @@ function reply(reply_token,menu,uname) {
 }
 
 function getdispname(uid){
+    let obj;
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
@@ -81,14 +82,13 @@ function getdispname(uid){
         headers: headers
         },(err,res) => {
             if(res.statusCode == 200){
-                let obj = JSON.parse(res.body).displayName;
-                console.log(obj);
-                return obj;
+                obj = JSON.parse(res.body).displayName;
             }else{
-                return ': Expected 200 status, But received: ' + res.statusCode + '\n' + res.body;
+                obj = ': Expected 200 status, But received: ' + res.statusCode + '\n' + res.body;
             }
         }
     );
+    return obj;
 }
 
 function callback(str){
