@@ -85,11 +85,9 @@ function getdispname(uid){
     }       
     rp(options)
         .then(async function(parseBody){
-            let dispname = await parseBody.body.displayName;
             console.log(parseBody);
         })
         .catch(function (err){
-
         })
 }
 
