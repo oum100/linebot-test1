@@ -27,21 +27,21 @@ function reply(reply_token,menu) {
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
 
-    //let body="";
+    let body="";
     if(menu[0] == "N" || menu[0] == "n"){
         let assetid = menu.substr(1,3);
-        let body = JSON.stringify({
+        body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
-                text: 'ตั้งแจ้งเตือน'+assetid
+                text: 'ตั้งแจ้งเตือน'+assetid;
             }]
         })
     }
 
     if(menu[0] == "B" ||menu[0]=="b"){
         let assetid = menu.substr(1,3);
-        let body =JSON.stringify({
+        body =JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
