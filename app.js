@@ -23,49 +23,54 @@ app.post('/webhook', (req, res) => {
         console.log('getdisplayname: '+ uname);
         reply(reply_token,menu_msg,uname);
     });
-    
-
-    //reply(reply_token,menu_msg,uname);
     res.sendStatus(200);
 })
 app.listen(port)
+
+
 
 function reply(reply_token,menu,uname) {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
-
     let body="";
+    switch (true){
+        case menu[0] == "N" || menu[0]== "n":
+            console.log('print N');
+            break;
+        case menu[0] == "B" || menu[0]== "b":   
+            console.log('print B');
+            break;
+    }
+
     if(menu[0] == "N" || menu[0] == "n"){
         let assetid = menu.substr(1,3);
         body = JSON.stringify({
             replyToken: reply_token,
             messages: [{
                 type: 'text',
-                text: 'ตั้งเตือนของเครื่อง '+ assetid + ' ไปยังคุณ \"' + uname + '\" เรียบร้อย ของคุณคะ'
+                text: 'ตั้งเตือนของเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย ของคุณคะ'
             }]
         })
-    }
-
-    if(menu[0] == "B" ||menu[0]=="b"){
-        let assetid = menu.substr(1,3);
-        body =JSON.stringify({
-            replyToken: reply_token,
-            messages: [{
-                type: 'text',
-                text: 'จองคิวเครื่อง' + assetid
-            }]
+    }else{
+        if(menu[0] == "B" ||menu[0]=="b"){
+            let assetid = menu.substr(1,3);
+            body =JSON.stringify({
+                replyToken: reply_token,
+                messages: [{
+                    type: 'text',
+                    text: 'จองคิวเครื่อง' + assetid
+                }]
         })
-    }
-
-    if(menu[0] == 3){
-        body = JSON.stringify({
-            replyToken: reply_token,
-            messages: [{
-                type: 'text',
-                text: 'กรุณารอสักครู่ (Wait a minute.)'
-            }]
+    }else{
+        if(menu[0] == 3){
+            body = JSON.stringify({
+                replyToken: reply_token,
+                messages: [{
+                    type: 'text',
+                    text: 'กรุณารอสักครู่ (Wait a minute.)'
+                }]
         })
     }
     request.post({
