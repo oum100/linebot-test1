@@ -70,10 +70,7 @@ function reply(reply_token,menu,uname) {
     });
 }
 
-function getdispname(uid){
-    let dispName ="";
-    let body="";
-    let obj;
+function getdispname(uid,callback){
 
     let headers = {
         'Content-Type': 'application/json',
@@ -82,12 +79,15 @@ function getdispname(uid){
 
     request.get({
             url:'https://api.line.me/v2/bot/profile/'+uid,
-            headers: headers,
-            body: body
-        }, async (err, res, body) => {
-            obj = await JSON.parse(res.body);
-            dispName = obj.displayName;
-            console.log('status: ' + res.statusCode);
+            headers: headers
+        }, (err, res, body) => {
+            if(res.statusCode == 200){
+                let obj = JSONB.parse(res.body.displayName);
+                //console.log('status: ' + res.statusCode);
+                callback(err,obj);
+            }else{
+                callback(err || ': Expected 200 status, received: ' + res.statusCode + '\n' + res.body);
+            }
         }
     );
     return dispName;
