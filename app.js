@@ -36,7 +36,7 @@ function reply(reply_token,menu,uname) {
             replyToken: reply_token,
             messages: [{
                 type: 'text',
-                text: 'ฉันจะแจ้งเตือนเครื่อง '+ assetid + ' ไปยัง ' + uname + ' ให้นะคะ ของคุณคะ'
+                text: 'ตั้งเตือนของเครื่อง '+ assetid + ' ไปยัง ' + uname + ' เรียบร้อย ของคุณคะ'
             }]
         })
     }
