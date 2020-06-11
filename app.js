@@ -18,7 +18,7 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log(menu_msg);
-    console.log(getdispname(uid));
+    console.log('getdisplayname: '+ getdispname(uid));
 
     reply(reply_token,menu_msg,"Hello");
     res.sendStatus(200);
@@ -76,7 +76,7 @@ function reply(reply_token,menu,uname) {
 function callback(error, response, body) {
     if (!error && response.statusCode == 200) {
       const info = JSON.parse(response.body);
-      console.log(info);
+      console.log('info: '+info);
     }
 }
 
