@@ -19,7 +19,7 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log(menu_msg);
-    console.log('getdisplayname: '+ getdispname(uid,callback));
+    console.log('getdisplayname: '+ getdispname(uid));
 
     reply(reply_token,menu_msg,"Hello");
     res.sendStatus(200);
@@ -86,7 +86,9 @@ function getdispname(uid,callback){
     rp(options,async (err,res) => {
         if(res.statusCode == 200){
             console.log('GetdisplayName Status: ' + res.statusCode);
-            console.log('displayname: ' + await JSON.parse(res.body).displayName);
+            let dispname = await JSON.parse(res.body).displayName;
+            console.log('displayname: ' + dispname);
+            callback(dispname);
         }
     });
 }
