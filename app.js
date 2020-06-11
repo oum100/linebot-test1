@@ -34,7 +34,7 @@ function reply(reply_token,menu) {
             replyToken: reply_token,
             messages: [{
                 type: 'text',
-                text: 'ตั้งแจ้งเตือน'+assetid;
+                text: 'ตั้งแจ้งเตือน'+assetid
             }]
         })
     }
