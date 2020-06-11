@@ -16,6 +16,7 @@ app.post('/webhook', (req, res) => {
     let menu_msg = req.body.events[0].message.text;
     let uid = req.body.events[0].source.userid;
 
+    console.log(uid);
     console.log(menu_msg);
     getdispname(uid);
     reply(reply_token,menu_msg);
