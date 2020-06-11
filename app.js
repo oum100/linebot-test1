@@ -14,7 +14,7 @@ app.post('/webhook', (req, res) => {
 
     let reply_token = req.body.events[0].replyToken;
     let menu_msg = req.body.events[0].message.text;
-    let uid = req.body.events[0].source.userid;
+    let uid = req.body.events[0].source.userId;
 
     console.log(uid);
     console.log(menu_msg);
