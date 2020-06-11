@@ -72,22 +72,25 @@ function reply(reply_token,menu,uname) {
     });
 }
 
-function getdispname(uid,callback){
-
-    let option = {
-        url:'https://api.line.me/v2/bot/profile/'+uid,
-        headers:{
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
-        }
-    }       
-    request.get(option,callback);
-}
-
 
 function callback(error, response, body) {
     if (!error && response.statusCode == 200) {
       const info = JSON.parse(response.body);
       console.log(info);
     }
-  }
+}
+
+function getdispname(uid,callback){
+
+    let options = {
+        method: 'GET',
+        url:'https://api.line.me/v2/bot/profile/'+uid,
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
+        }
+    }       
+    request(options,callback);
+}
+
+
