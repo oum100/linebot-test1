@@ -16,7 +16,6 @@ app.post('/webhook', (req, res) => {
     let menu_msg = req.body.events[0].message.text;
     let uid = req.body.events[0].source.userId;
 
-    console.log(uid);
     console.log(menu_msg);
     
     reply(reply_token,menu_msg,getdispname(uid));
@@ -37,7 +36,7 @@ function reply(reply_token,menu,uname) {
             replyToken: reply_token,
             messages: [{
                 type: 'text',
-                text: 'ฉันจะแจ้งเตือน'+ assetid + 'ไปยัง' + uname + 'ให้นะคะ ของคุณคะ'
+                text: 'ฉันจะแจ้งเตือนเครื่อง '+ assetid + ' ไปยัง' + uname + ' ให้นะคะ ของคุณคะ'
             }]
         })
     }
@@ -83,6 +82,6 @@ function getdispname(uid){
         body: body
     }, (err, res, body) => {
         console.log('status: ' + res.statusCode);
-        return res.body.displayName;
+        console.log(JSON.parse(res.body));
     });
 }
