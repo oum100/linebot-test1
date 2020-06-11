@@ -82,7 +82,8 @@ function getdispname(uid,dispname){
         headers: headers
         },(err,res) => {
             if(res.statusCode == 200){
-                dispname = JSON.parse(res.body).displayName;
+                getdispname = JSON.parse(res.body).displayName;
+                //console.log(dispname);
             }else{
                 console.log(': Expected 200 status, But received: ' + res.statusCode + '\n' + res.body);
             }
