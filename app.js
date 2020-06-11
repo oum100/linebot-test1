@@ -87,7 +87,7 @@ function getdispname(uid,callback){
 
 function callback(error, response, body) {
     if (!error && response.statusCode == 200) {
-      const info = JSON.parse(body);
+      const info = JSON.parse(res.body);
       console.log(info.displayName);
     }
   }
