@@ -17,25 +17,7 @@ app.post('/webhook', (req, res) => {
     let uid = req.body.events[0].source.userId;
 
     console.log(menu_msg);
-
-    var getdispname = function (uid,callback){
-        let headers = {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
-        }       
-        request.get({
-            url:'https://api.line.me/v2/bot/profile/'+uid,
-            headers: headers
-            },function(err,res){
-                if(res.statusCode == 200){
-                    let obj = JSON.parse(req.body).displayName;
-                    callback(err,obj);
-                }else{
-                    callback(err||': Expected 200 status, But received: ' + res.statusCode + '\n' + res.body);
-                }
-            }
-        );
-    }
+    getdispname(uid);
 
     reply(reply_token,menu_msg,getdispname(uid,callback));
     res.sendStatus(200);
@@ -87,4 +69,27 @@ function reply(reply_token,menu,uname) {
     }, (err, res, body) => {
         console.log('status = ' + res.statusCode);
     });
+}
+
+function getdispname(uid){
+    let headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
+    }       
+    request.get({
+        url:'https://api.line.me/v2/bot/profile/'+uid,
+        headers: headers
+        },(err,res) => {
+            if(res.statusCode == 200){
+                let obj = JSON.parse(req.body).displayName;
+                callback(obj);
+            }else{
+                callback(err||': Expected 200 status, But received: ' + res.statusCode + '\n' + res.body);
+            }
+        }
+    );
+}
+
+function callback(str){
+    console.log(str);
 }
