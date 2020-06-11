@@ -19,8 +19,10 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log(menu_msg);
-    uname = await getdispname(uid);
-    console.log('getdisplayname: '+ uname);
+    getdispname(uid).then(function(uname){
+        console.log('getdisplayname: '+ uname);
+    });
+    
 
     reply(reply_token,menu_msg,"Hello");
     res.sendStatus(200);
@@ -74,7 +76,7 @@ function reply(reply_token,menu,uname) {
     });
 }
 
-async function getdispname(uid){
+function getdispname(uid){
 
     let options = {
         method: 'GET',
@@ -84,9 +86,8 @@ async function getdispname(uid){
             'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
         }
     }       
-     rp(options)
-        .then(async function(msgBody){
-            console.log(msgBody);
+     return rp(options)
+        .then(function(msgBody){
             return  JSON.parse(msgBody).displayName;
         })
         .catch(function (err){
