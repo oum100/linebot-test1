@@ -18,13 +18,13 @@ app.post('/webhook', (req, res) => {
 
     console.log(uid);
     console.log(menu_msg);
-    getdispname(uid);
-    reply(reply_token,menu_msg);
+    
+    reply(reply_token,menu_msg,getdispname(uid));
     res.sendStatus(200);
 })
 app.listen(port)
 
-function reply(reply_token,menu) {
+function reply(reply_token,menu,uname) {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
@@ -37,7 +37,7 @@ function reply(reply_token,menu) {
             replyToken: reply_token,
             messages: [{
                 type: 'text',
-                text: 'ฉันตั้งแจ้งเตือน'+ assetid + ''
+                text: 'ฉันจะแจ้งเตือน'+ assetid + 'ไปยัง' + uname + 'ให้นะคะ ของคุณคะ'
             }]
         })
     }
