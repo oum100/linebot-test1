@@ -37,7 +37,7 @@ function reply(reply_token,menu,uname) {
     let body="";
     let msgtxt = "";
     let assetid = menu.substr(1,3);
-    if(!Number.isInteger(assetid)){
+    if(Number.isInteger(assetid)){
         msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง';
     }else {
         switch (true){
