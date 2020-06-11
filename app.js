@@ -17,9 +17,9 @@ app.post('/webhook', (req, res) => {
     let uid = req.body.events[0].source.userId;
 
     console.log(menu_msg);
-    getdispname(uid);
+    //getdispname(uid);
 
-    reply(reply_token,menu_msg,getdispname(uid,callback));
+    reply(reply_token,menu_msg,getdispname(uid));
     res.sendStatus(200);
 })
 app.listen(port)
@@ -92,4 +92,5 @@ function getdispname(uid){
 
 function callback(str){
     console.log(str);
+    return str;
 }
