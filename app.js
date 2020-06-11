@@ -18,7 +18,7 @@ app.post('/webhook', (req, res) => {
 
     console.log(menu_msg);
     let dispname = getdispname(uid);
-    reply(reply_token,menu_msg,dispname);
+    reply(reply_token,menu_msg,'Teerin');
     res.sendStatus(200);
 })
 app.listen(port)
