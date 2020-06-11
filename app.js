@@ -21,6 +21,7 @@ app.post('/webhook', (req, res) => {
     console.log(menu_msg);
     getdispname(uid).then(function(uname){
         console.log('getdisplayname: '+ uname);
+        reply(reply_token,menu_msg,uname);
     });
     
 
