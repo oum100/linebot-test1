@@ -19,7 +19,8 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log(menu_msg);
-    console.log('getdisplayname: '+ await getdispname(uid));
+    uname = await getdispname(uid);
+    console.log('getdisplayname: '+ uname);
 
     reply(reply_token,menu_msg,"Hello");
     res.sendStatus(200);
