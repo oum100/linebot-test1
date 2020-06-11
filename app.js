@@ -37,7 +37,7 @@ function reply(reply_token,menu,uname) {
     let body="";
     let msgtxt = "";
     let assetid = menu.substr(1,3);
-    if(Number.isInteger(assetid)){
+    if(Number.isNaN(assetid)){
         msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง';
     }else {
         switch (true){
@@ -50,6 +50,7 @@ function reply(reply_token,menu,uname) {
                 msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
                 break;
             default:
+                msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว)และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100, B440';
         }
     }
 
