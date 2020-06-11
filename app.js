@@ -37,9 +37,7 @@ function reply(reply_token,menu,uname) {
     let body="";
     let msgtxt = "";
     let assetid = menu.substr(1,3);
-    if(Number.isNaN(assetid)){
-        msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง';
-    }else {
+    if(Number(assetid)){
         switch (true){
             case menu[0] == "N" || menu[0]== "n":
                 console.log('print N');
@@ -50,8 +48,10 @@ function reply(reply_token,menu,uname) {
                 msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
                 break;
             default:
-                msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว)และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100, B440';
+                msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
         }
+    }else{
+        msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง : N=แจ้งเตือน หรือ B=จองคิว และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
     }
 
     body = JSON.stringify({
