@@ -88,6 +88,7 @@ function getdispname(uid){
             }
         }
     );
+    console.log(obj);
     return obj;
 }
 
