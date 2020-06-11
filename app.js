@@ -18,9 +18,9 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log(menu_msg);
-    getdispname(uid,uname);
+    console.log(getdispname(uid));
 
-    reply(reply_token,menu_msg,);
+    reply(reply_token,menu_msg,"Hello");
     res.sendStatus(200);
 })
 app.listen(port)
@@ -83,7 +83,7 @@ function getdispname(uid,dispname){
         },(err,res) => {
             if(res.statusCode == 200){
                 getdispname = JSON.parse(res.body).displayName;
-                //console.log(dispname);
+                console.log(res.statusCode);
             }else{
                 console.log(': Expected 200 status, But received: ' + res.statusCode + '\n' + res.body);
             }
