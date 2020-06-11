@@ -73,7 +73,7 @@ function reply(reply_token,menu,uname) {
     });
 }
 
-function getdispname(uid,callback){
+function getdispname(uid){
 
     let options = {
         method: 'GET',
@@ -83,14 +83,14 @@ function getdispname(uid,callback){
             'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
         }
     }       
-    rp(options,async (err,res) => {
-        if(res.statusCode == 200){
-            console.log('GetdisplayName Status: ' + res.statusCode);
-            let dispname = await JSON.parse(res.body).displayName;
-            console.log('displayname: ' + dispname);
-            callback(dispname);
-        }
-    });
+    rp(options)
+        .then(async function(parseBody){
+            let dispname = await parseBody.body.displayName;
+            console.log(parseBody);
+        })
+        .catch(function (err){
+
+        })
 }
 
 
