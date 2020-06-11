@@ -17,7 +17,7 @@ app.post('/webhook', (req, res) => {
     let uid = req.body.events[0].source.userId;
 
     console.log(menu_msg);
-    console.log(getdispname(uid));
+    console.log(getdispname(uid,callback));
     reply(reply_token,menu_msg,'Teerin');
     res.sendStatus(200);
 })
@@ -80,11 +80,11 @@ function getdispname(uid,callback){
     request.get({
             url:'https://api.line.me/v2/bot/profile/'+uid,
             headers: headers
-        }, (err, res, body) => {
+        }, function (err, res) {
             if(res.statusCode == 200){
-                let obj = JSON.parse(res.body);
+                let obj = JSON.parse(res.body).displayName;
                 //console.log('status: ' + res.statusCode);
-                callback(err,obj.displayName);
+                callback(err,obj);
             }else{
                 callback(err || ': Expected 200 status, received: ' + res.statusCode + '\n' + res.body);
             }
