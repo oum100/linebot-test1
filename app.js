@@ -75,17 +75,17 @@ function getdispname(uid){
         'Content-Type': 'application/json',
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
     }
-    let body="";
     let dispName ="";
+    let body="";
+    let obj;
     request.get({
         url:'https://api.line.me/v2/bot/profile/'+uid,
         headers: headers,
         body: body
     }, (err, res, body) => {
         console.log('status: ' + res.statusCode);
-        const obj = JSON.parse(res.body);
+        obj = JSON.parse(res.body);
         dispName = obj.displayName;
-        console.log(dispName);
-        return 555;
     });
+    console.log(dispName);
 }
