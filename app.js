@@ -86,6 +86,7 @@ function getdispname(uid){
     rp(options)
         .then(async function(parseBody){
             console.log(parseBody);
+            console.log(parseBody.displayName);
         })
         .catch(function (err){
         })
