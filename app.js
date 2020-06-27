@@ -62,15 +62,13 @@ function reply(reply_token,menu,uname) {
         const data = {
         }
 
-        msgtxt = layoutmsg(data)
+        msgtxt = layoutmsg(data);
 
         body = JSON.stringify({
             replyToken: reply_token,
             messages: [msgtxt]
         })
     }
-
-
 
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
@@ -100,232 +98,237 @@ function getdispname(uid){
 
 function layoutmsg(data){
     return {
-        "type": "bubble",
-        "size": "giga",
-        "direction": "ltr",
-        "header": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
-                "type": "text",
-                "text": "กรุณาเลือกเครื่อง",
-                "size": "xl",
-                "color": "#FFFFFF",
-                "weight": "bold",
-                "align": "center",
-                "style": "normal",
-                "wrap": true
-            },
-            {
-                "type": "text",
-                "text": "Please Select Machine",
-                "size": "lg",
-                "align": "center",
-                "decoration": "none",
-                "weight": "bold",
-                "color": "#FFFFFF"
-            }
-            ],
-            "backgroundColor": "#0f55FE"
-        },
-        "body": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-            {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
+
+        
+            "type": "bubble",
+            "size": "giga",
+            "direction": "ltr",
+            "header": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
                 {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                    {
-                        "type": "text",
-                        "text": "เครื่องซัก (Washer)",
-                        "wrap": false,
-                        "align": "center",
-                        "color": "#FFFFFF",
-                        "weight": "bold"
-                    }
-                    ],
-                    "backgroundColor": "#ff0000",
-                    "margin": "none",
-                    "borderColor": "#FFFFFF",
-                    "spacing": "md"
+                  "type": "text",
+                  "text": "กรุณาเลือกเครื่อง",
+                  "size": "xl",
+                  "color": "#FFFFFF",
+                  "weight": "bold",
+                  "align": "center",
+                  "style": "normal",
+                  "wrap": true
                 },
                 {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "WF-093",
-                    "uri": "http://linecorp.com/"
-                    },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33DDFF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "WF-095",
-                    "uri": "http://linecorp.com/"
-                    },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33A5FF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "WF-097",
-                    "uri": "http://linecorp.com/"
-                    },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33DDFF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "WF-099",
-                    "uri": "http://linecorp.com/"
-                    },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33A5FF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "WF-101",
-                    "uri": "http://linecorp.com/"
-                    },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33DDFF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "WF-103",
-                    "uri": "http://linecorp.com/"
-                    },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33A5FF"
+                  "type": "text",
+                  "text": "Please Select Machine",
+                  "size": "lg",
+                  "align": "center",
+                  "decoration": "none",
+                  "weight": "bold",
+                  "color": "#FFFFFF"
                 }
-                ]
+              ],
+              "backgroundColor": "#0f55FE"
             },
-            {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
+            "body": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
                 {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
                     {
-                        "type": "text",
-                        "text": "เครื่องอบ (Dryer)",
-                        "wrap": false,
-                        "align": "center",
-                        "weight": "bold"
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "เครื่องซัก (Washer)",
+                          "wrap": false,
+                          "align": "center",
+                          "color": "#FFFFFF",
+                          "weight": "bold"
+                        }
+                      ],
+                      "backgroundColor": "#ff0000",
+                      "margin": "none",
+                      "borderColor": "#FFFFFF",
+                      "spacing": "md"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "WF-093",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33DDFF"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "WF-095",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33A5FF"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "WF-097",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33DDFF"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "WF-099",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33A5FF"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "WF-101",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33DDFF"
+                    },
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "WF-103",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33A5FF"
                     }
-                    ],
-                    "margin": "none",
-                    "borderColor": "#0000ff"
+                  ]
                 },
                 {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "DF-094",
-                    "uri": "http://linecorp.com/"
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "เครื่องอบ (Dryer)",
+                          "wrap": false,
+                          "align": "center",
+                          "weight": "bold"
+                        }
+                      ],
+                      "margin": "none",
+                      "borderColor": "#0000ff"
                     },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33DDFF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "DF-096",
-                    "uri": "http://linecorp.com/"
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "DF-094",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33DDFF"
                     },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33A5FF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "DF-098",
-                    "uri": "http://linecorp.com/"
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "DF-096",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33A5FF"
                     },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33DDFF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "DF-100",
-                    "uri": "http://linecorp.com/"
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "DF-098",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33DDFF"
                     },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33A5FF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "DF-102",
-                    "uri": "http://linecorp.com/"
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "DF-100",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33A5FF"
                     },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33DDFF"
-                },
-                {
-                    "type": "button",
-                    "action": {
-                    "type": "uri",
-                    "label": "DF-104",
-                    "uri": "http://linecorp.com/"
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "DF-102",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33DDFF"
                     },
-                    "margin": "sm",
-                    "height": "sm",
-                    "style": "secondary",
-                    "color": "#33A5FF"
+                    {
+                      "type": "button",
+                      "action": {
+                        "type": "uri",
+                        "label": "DF-104",
+                        "uri": "http://linecorp.com/"
+                      },
+                      "margin": "sm",
+                      "height": "sm",
+                      "style": "secondary",
+                      "color": "#33A5FF"
+                    }
+                  ]
                 }
-                ]
+              ],
+              "spacing": "sm",
+              "margin": "none"
             }
-            ],
-            "spacing": "sm",
-            "margin": "none"
-        }
+                  
+
+
     }
 }
 
