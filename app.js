@@ -50,17 +50,27 @@ function reply(reply_token,menu,uname) {
             default:
                 msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
         }
+        body = JSON.stringify({
+            replyToken: reply_token,
+            messages: [{
+                type: 'text',
+                text: msgtxt
+            }]
+        })
     }else if(menu[0] != "พ"){
-        msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง : N=แจ้งเตือน หรือ B=จองคิว และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
+        //msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง : N=แจ้งเตือน หรือ B=จองคิว และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
+        const data = {
+        }
+
+        msgtxt = layoutmsg(data)
+
+        body = JSON.stringify({
+            replyToken: reply_token,
+            messages: [msgtxt]
+        })
     }
 
-    body = JSON.stringify({
-        replyToken: reply_token,
-        messages: [{
-            type: 'text',
-            text: msgtxt
-        }]
-    })
+
 
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
@@ -86,6 +96,103 @@ function getdispname(uid){
         })
         .catch(function (err){
         })
+}
+
+function layoutmsg(data){
+    return {
+        "type": "flex",
+        "altText": "I-Am-Teemo Flex Message",
+        "contents": {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "image",
+                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip13.jpg",
+                            "aspectMode": "cover",
+                            "size": "full"
+                        }
+                        ],
+                        "cornerRadius": "100px",
+                        "width": "72px",
+                        "height": "72px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "contents": [
+                            {
+                                "type": "span",
+                                "text": "Temp: " + "38",
+                                "weight": "bold",
+                                "color": "#000000"
+                            }
+                            ],
+                            "size": "sm",
+                            "wrap": true
+                        },
+                        {
+                            "type": "text",
+                            "contents": [
+                            {
+                                "type": "span",
+                                "text": "Humidity: " + "90",
+                                "color": "#000000"
+                            }
+                            ],
+                            "size": "sm",
+                            "wrap": true
+                        },
+                        {
+                            "type": "text",
+                            "contents": [
+                            {
+                                "type": "span",
+                                "text": "Wind: " + "1",
+                                "color": "#000000"
+                            }
+                            ],
+                            "size": "sm",
+                            "wrap": true
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                            {
+                                "type": "text",
+                                "text": "Bangchan",
+                                "size": "sm",
+                                "color": "#bcbcbc"
+                            }
+                            ],
+                            "spacing": "sm",
+                            "margin": "md"
+                        }
+                        ]
+                    }
+                    ],
+                    "spacing": "xl",
+                    "paddingAll": "20px"
+                }
+                ],
+                "paddingAll": "0px"
+            }
+        }
+    }
 }
 
 
