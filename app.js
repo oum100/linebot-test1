@@ -24,8 +24,26 @@ app.post('/webhook', (req, res) => {
         reply(reply_token,menu_msg,uname);
     });
     res.sendStatus(200);
-})
+});
+
+app.post('/menu1',(req, res) => {
+    let reply_token = req.body.events[0].replyToken;
+    let menu_msg = req.body.events[0].message.text;
+    let uid =  req.body.events[0].source.userId;
+    let uname="";
+
+    console.log(menu_msg);
+    getdispname(uid).then(function(uname){
+        console.log('getdisplayname: '+ uname);
+        reply(reply_token,menu_msg,uname);
+    });
+    res.sendStatus(200);    
+
+});
+
 app.listen(port)
+
+
 
 
 
