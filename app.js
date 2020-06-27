@@ -99,8 +99,9 @@ function getdispname(uid){
 
 function layoutmsg(data){
     return {
-
-        
+        "type": "flex",
+        "altText": "I-Am-Teemo Flex Message",
+        "contents": {
             "type": "bubble",
             "size": "giga",
             "direction": "ltr",
@@ -327,10 +328,8 @@ function layoutmsg(data){
               "spacing": "sm",
               "margin": "none"
             }
-                  
-
-
-    }
+          }
+      }
 }
 
 
