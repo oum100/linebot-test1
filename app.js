@@ -63,6 +63,7 @@ function reply(reply_token,menu,uname) {
         }
 
         msgtxt = layoutmsg(data);
+        console.log(msgtxt);
 
         body = JSON.stringify({
             replyToken: reply_token,
