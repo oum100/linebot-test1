@@ -63,7 +63,6 @@ function reply(reply_token,menu,uname) {
         }
 
         msgtxt = layoutmsg(data);
-        console.log(msgtxt);
 
         body = JSON.stringify({
             replyToken: reply_token,
@@ -103,7 +102,7 @@ function layoutmsg(data){
         "altText": "I-Am-Teemo Flex Message",
         "contents": {
             "type": "bubble",
-            "size": "giga",
+            "size": "mega",
             "direction": "ltr",
             "header": {
               "type": "box",
@@ -145,7 +144,7 @@ function layoutmsg(data){
                       "contents": [
                         {
                           "type": "text",
-                          "text": "เครื่องซัก (Washer)",
+                          "text": "เครื่องซัก(Washer)",
                           "wrap": false,
                           "align": "center",
                           "color": "#FFFFFF",
@@ -241,7 +240,7 @@ function layoutmsg(data){
                       "contents": [
                         {
                           "type": "text",
-                          "text": "เครื่องอบ (Dryer)",
+                          "text": "เครื่องอบ(Dryer)",
                           "wrap": false,
                           "align": "center",
                           "weight": "bold"
