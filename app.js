@@ -177,9 +177,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "WF-093",
-                        "uri": "http://linecorp.com/"
+                        "text": "WF-0093"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -189,9 +189,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "WF-095",
-                        "uri": "http://linecorp.com/"
+                        "text": "WF-0095"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -201,9 +201,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "WF-097",
-                        "uri": "http://linecorp.com/"
+                        "text": "WF-0097"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -213,9 +213,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "WF-099",
-                        "uri": "http://linecorp.com/"
+                        "text": "WF-0099"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -225,9 +225,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "WF-101",
-                        "uri": "http://linecorp.com/"
+                        "text": "WF-0101"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -237,9 +237,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "WF-103",
-                        "uri": "http://linecorp.com/"
+                        "text": "WF-0103"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -270,9 +270,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "DF-094",
-                        "uri": "http://linecorp.com/"
+                        "text": "DF-0094"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -282,9 +282,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "DF-096",
-                        "uri": "http://linecorp.com/"
+                        "text": "DF-0096"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -294,9 +294,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "DF-098",
-                        "uri": "http://linecorp.com/"
+                        "text": "DF-0098"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -306,9 +306,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "DF-100",
-                        "uri": "http://linecorp.com/"
+                        "text": "DF-0100"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -330,9 +330,9 @@ function layoutmsg(data){
                     {
                       "type": "button",
                       "action": {
-                        "type": "uri",
+                        "type": "message",
                         "label": "DF-104",
-                        "uri": "http://linecorp.com/"
+                        "text": "DF-0104"
                       },
                       "margin": "sm",
                       "height": "sm",
