@@ -162,17 +162,13 @@ function layoutmsg(data){
                       "contents": [
                         {
                           "type": "text",
-                          "text": "เครื่องซัก(Washer)",
+                          "text": "ซักผ้า(Washer)",
                           "wrap": false,
                           "align": "center",
-                          "color": "#FFFFFF",
                           "weight": "bold"
                         }
                       ],
-                      "backgroundColor": "#ff0000",
-                      "margin": "none",
-                      "borderColor": "#FFFFFF",
-                      "spacing": "md"
+                      "margin": "none"
                     },
                     {
                       "type": "button",
@@ -258,14 +254,13 @@ function layoutmsg(data){
                       "contents": [
                         {
                           "type": "text",
-                          "text": "เครื่องอบ(Dryer)",
+                          "text": "อบผ้า (Dryer)",
                           "wrap": false,
                           "align": "center",
                           "weight": "bold"
                         }
                       ],
-                      "margin": "none",
-                      "borderColor": "#0000ff"
+                      "margin": "none"
                     },
                     {
                       "type": "button",
