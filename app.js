@@ -21,24 +21,11 @@ app.post('/webhook', (req, res) => {
     console.log(menu_msg);
     getdispname(uid).then(function(uname){
         console.log('getdisplayname: '+ uname);
-        reply(reply_token,menu_msg,uname);
+        //reply(reply_token,menu_msg,uname);
+
+        quickReply();
     });
     res.sendStatus(200);
-});
-
-app.post('/menu1',(req, res) => {
-    let reply_token = req.body.events[0].replyToken;
-    let menu_msg = req.body.events[0].message.text;
-    let uid =  req.body.events[0].source.userId;
-    let uname="";
-
-    console.log(menu_msg);
-    getdispname(uid).then(function(uname){
-        console.log('getdisplayname: '+ uname);
-        reply(reply_token,menu_msg,uname);
-    });
-    res.sendStatus(200);    
-
 });
 
 app.listen(port)
@@ -46,7 +33,7 @@ app.listen(port)
 
 
 
-
+//Function all.
 function reply(reply_token,menu,uname) {
     let headers = {
         'Content-Type': 'application/json',
@@ -345,3 +332,30 @@ function layoutmsg(data){
 }
 
 
+const quickReply = bodyRequest => {
+    return request({
+      method: `POST`,
+      uri: `${LINE_MESSAGING_API}/reply`,
+      headers: LINE_HEADER,
+      body: JSON.stringify({
+        replyToken: bodyRequest.events[0].replyToken,
+        messages: [
+          {
+            type: `text`,
+            text: `Please send me your location!, I will report AQI for you.`,
+            quickReply: {
+              items: [
+                {
+                  type: "action",
+                  action: {
+                    type: "location",
+                    label: "Send Location"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      })
+    });
+  };
