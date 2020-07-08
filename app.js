@@ -40,45 +40,33 @@ function reply(reply_token,menu,uname) {
     let body="";
     let msgtxt = "";
     let assetid = menu.substr(1);
-    console.log(menu[0]);
-    if(Number(assetid)){
-        switch (true){
-            case menu[0] == "N" || menu[0]== "n":
-                //console.log('print N');
-                //msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-                msgtxt = machinelist("Notification");
-                break;
-            case menu[0] == "W" || menu[0]== "w":   
-                //console.log('print B');
-                //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-                msgtxt = machinelist("Wash & Dry");
-                break;
-            case menu[0] == "Q" || menu[0]== "q":   
-                //console.log('print B');
-                //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-                msgtxt = machinelist("Booking");
-                break;
-            default:
-                msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
-        }
-        body = JSON.stringify({
-            replyToken: reply_token,
-            messages: [{
-                type: 'text',
-                text: msgtxt
-            }]
-        })
-    }else if(menu[0] != "พ"){
-        //msgtxt = 'หมายเลขเครื่องไม่ถูกต้อง : N=แจ้งเตือน หรือ B=จองคิว และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
-
-        //msgtxt = machinelist();
-        msgtxt = quickReply();
-
-        body = JSON.stringify({
-            replyToken: reply_token,
-            messages: [msgtxt]
-        })
+    switch (true){
+        case menu[0] == "N" || menu[0]== "n":
+            //console.log('print N');
+            //msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
+            msgtxt = machinelist("Notification");
+            break;
+        case menu[0] == "W" || menu[0]== "w":   
+            //console.log('print B');
+            //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
+            msgtxt = machinelist("Wash & Dry");
+            break;
+        case menu[0] == "Q" || menu[0]== "q":   
+            //console.log('print B');
+            //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
+            msgtxt = machinelist("Booking");
+            break;
+        default:
+            //msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
+            msgtxt = quickReply();
     }
+    body = JSON.stringify({
+        replyToken: reply_token,
+        messages: [{
+            type: 'text',
+            text: msgtxt
+        }]
+    })
 
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
