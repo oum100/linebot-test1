@@ -40,6 +40,7 @@ function reply(reply_token,menu,uname) {
     let body="";
     let msgtxt = "";
     let assetid = menu.substr(1);
+
     switch (true){
         case menu[0] == "N" || menu[0]== "n":
             //console.log('print N');
@@ -48,17 +49,17 @@ function reply(reply_token,menu,uname) {
             break;
         case menu[0] == "W" || menu[0]== "w":   
             //console.log('print B');
-            //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Wash & Dry");
+            msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
+            //msgtxt = machinelist("Wash & Dry");
             break;
         case menu[0] == "Q" || menu[0]== "q":   
             //console.log('print B');
-            //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Booking");
+            msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
+            //msgtxt = machinelist("Booking");
             break;
         default:
-            //msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
-            msgtxt = quickReply();
+            msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
+            //msgtxt = quickReply();
     }
     body = JSON.stringify({
         replyToken: reply_token,
