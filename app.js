@@ -112,7 +112,7 @@ function machinelist(header){
               "contents": [
                 {
                   "type": "text",
-                  "text": header,
+                  "text": "กรุณาเลือกเครื่อง",
                   "size": "xl",
                   "color": "#FFFFFF",
                   "weight": "bold",
