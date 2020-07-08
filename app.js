@@ -61,13 +61,17 @@ function reply(reply_token,menu,uname) {
             //msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
             msgtxt = quickReply();
     }
+    // body = JSON.stringify({
+    //     replyToken: reply_token,
+    //     messages: [{
+    //         type: 'text',
+    //         text: msgtxt
+    //     }]
+    // })
+
     body = JSON.stringify({
         replyToken: reply_token,
-        messages: [{
-            //type: 'text',
-            //text: msgtxt
-            msgtxt
-        }]
+        messages: [msgtxt]
     })
 
     console.log('body = ' + body)
