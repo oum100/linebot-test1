@@ -68,6 +68,7 @@ function reply(reply_token,menu,uname) {
         }]
     })
 
+    console.log('body = ' + body)
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
         headers: headers,
@@ -76,6 +77,9 @@ function reply(reply_token,menu,uname) {
         console.log('status = ' + res.statusCode);
     });
 }
+
+
+
 
 function getdispname(uid){
     let options = {
