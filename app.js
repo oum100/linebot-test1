@@ -24,8 +24,11 @@ app.post('/webhook', (req, res) => {
     console.log('message:'+menu_msg+'\n');
     getdispname(uid).then(function(uname){
         console.log('getdisplayname: '+ uname+'\n');
-        reply(reply_token,menu_msg,uname);
+        //reply(reply_token,menu_msg,uname);
     });
+
+    reply(reply_token,menu_msg,uname);
+
     res.sendStatus(200);
 });
 
