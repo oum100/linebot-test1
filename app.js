@@ -8,19 +8,22 @@ const app = express()
 const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
 app.post('/webhook', (req, res) => {
     //console.log(req.body);
     //console.log();
+    console.log("Start body.\n");
     console.log(req.body.events);
+    console.log("End body.\n")
 
     let reply_token = req.body.events[0].replyToken;
     let menu_msg = req.body.events[0].message.text;
     let uid = req.body.events[0].source.userId;
     let uname="";
 
-    console.log(menu_msg);
+    console.log('message:'+menu_msg+'\n');
     getdispname(uid).then(function(uname){
-        console.log('getdisplayname: '+ uname);
+        console.log('getdisplayname: '+ uname+'\n');
         reply(reply_token,menu_msg,uname);
     });
     res.sendStatus(200);
