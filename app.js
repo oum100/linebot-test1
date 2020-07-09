@@ -20,7 +20,7 @@ app.post('/webhook', async (req, res) => {
     let reply_token = req.body.events[0].replyToken;
     let menu_msg = req.body.events[0].message.text;
     let uid = req.body.events[0].source.userId;
-    let uname=await getdispname();
+    let uname=await getdispname(uid);
 
     console.log('message:'+menu_msg+'\n');
     console.log('User Name: '+uname+'\n');
