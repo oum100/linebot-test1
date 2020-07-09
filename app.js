@@ -23,6 +23,7 @@ app.post('/webhook', async (req, res) => {
     let uname=await getdispname();
 
     console.log('message:'+menu_msg+'\n');
+    console.log('User Name: '+uname+'\n');
 
     // uname = await getdispname(uid).then(function(uname){
     //     console.log('getdisplayname: '+ uname+'\n');
