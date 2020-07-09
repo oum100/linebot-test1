@@ -9,24 +9,8 @@ const port = process.env.PORT || 4000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-async function getdispname(uid){
-    let options = {
-        method: 'GET',
-        url:'https://api.line.me/v2/bot/profile/'+uid,
-        headers:{
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
-        }
-    }       
-     return rp(options)
-        .then(function(msgBody){
-            return  JSON.parse(msgBody).displayName;
-        })
-        .catch(function (err){
-        })
-}
 
-app.post('/webhook', (req, res) => {
+app.post('/webhook', async (req, res) => {
     //console.log(req.body);
     //console.log();
     console.log("Start body.\n");
@@ -111,7 +95,22 @@ function reply(reply_token,menu,uname) {
 }
 
 
-
+function getdispname(uid){
+    let options = {
+        method: 'GET',
+        url:'https://api.line.me/v2/bot/profile/'+uid,
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
+        }
+    }       
+     return rp(options)
+        .then(function(msgBody){
+            return  JSON.parse(msgBody).displayName;
+        })
+        .catch(function (err){
+        })
+}
 
 
 
