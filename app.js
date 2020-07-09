@@ -18,11 +18,14 @@ app.post('/webhook', async (req, res) => {
     console.log("End body.\n")
 
     let reply_token = req.body.events[0].replyToken;
+    let timestamp = req.body.events[0].source.timestamp;
     let menu_msg = req.body.events[0].message.text;
     let uid = req.body.events[0].source.userId;
     let uname=await getdispname(uid);
 
+    console.log('Timestamp: '+timestamp+'\n');
     console.log('message:'+menu_msg+'\n');
+    console.log('UserId: '+uid+'\n');
     console.log('User Name: '+uname+'\n');
 
     // uname = await getdispname(uid).then(function(uname){
@@ -56,7 +59,7 @@ function reply(reply_token,menu,uname) {
             //msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
             msgtxt = machinelist("Notification");
             break;
-        case menu[0] == "W" || menu[0]== "w":   
+        case menu[0] == "O" || menu[0]== "o":   
             //console.log('print B');
             //msgtxt = 'ใช้บริการ '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
             msgtxt = machinelist("Wash & Dry");
@@ -131,7 +134,7 @@ function machinelist(header){
               "contents": [
                 {
                   "type": "text",
-                  "text": "กรุณาเลือกเครื่อง",
+                  "text": "กรุณาเลือกเครื่องสำหรับ",
                   "size": "xl",
                   "color": "#FFFFFF",
                   "weight": "bold",
