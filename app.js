@@ -20,13 +20,14 @@ app.post('/webhook', async (req, res) => {
     let reply_token = req.body.events[0].replyToken;
     let menu_msg = req.body.events[0].message.text;
     let uid = req.body.events[0].source.userId;
-    let uname="";
+    let uname=await getdispname();
 
     console.log('message:'+menu_msg+'\n');
-    await getdispname(uid).then(function(uname){
-        console.log('getdisplayname: '+ uname+'\n');
-        //reply(reply_token,menu_msg,uname);
-    });
+
+    // uname = await getdispname(uid).then(function(uname){
+    //     console.log('getdisplayname: '+ uname+'\n');
+    //     //reply(reply_token,menu_msg,uname);
+    // });
 
     reply(reply_token,menu_msg,uname);
 
