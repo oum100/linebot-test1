@@ -22,7 +22,7 @@ app.post('/webhook', (req, res) => {
     let uname="";
 
     console.log('message:'+menu_msg+'\n');
-    getdispname(uid).then(function(uname){
+    await getdispname(uid).then(function(uname){
         console.log('getdisplayname: '+ uname+'\n');
         //reply(reply_token,menu_msg,uname);
     });
@@ -80,7 +80,10 @@ function reply(reply_token,menu,uname) {
         messages: [msgtxt]
     })
 
-    console.log('body = ' + body)
+    console.log('Start Reply body \n');
+    console.log(body+'\n')
+    console.log('End Reply body \n');
+
     request.post({
         url: 'https://api.line.me/v2/bot/message/reply',
         headers: headers,
@@ -93,7 +96,7 @@ function reply(reply_token,menu,uname) {
 
 
 
-function getdispname(uid){
+async function getdispname(uid){
     let options = {
         method: 'GET',
         url:'https://api.line.me/v2/bot/profile/'+uid,
