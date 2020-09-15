@@ -1,13 +1,13 @@
 // Reply with two static messages
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const request = require('request')
-const rp = require('request-promise')
-const app = express()
-const port = process.env.PORT || 4000
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+const express = require('express');
+const bodyParser = require('body-parser');
+const request = require('request');
+const rp = require('request-promise');
+const app = express();
+const port = process.env.PORT || 4000;
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 app.post('/webhook', async (req, res) => {
@@ -15,7 +15,7 @@ app.post('/webhook', async (req, res) => {
     //console.log();
     console.log("Start body.\n");
     console.log(req.body.events);
-    console.log("End body.\n")
+    console.log("End body.\n");
 
     let reply_token = req.body.events[0].replyToken;
     let timestamp = req.body.events[0].source.timestamp;
@@ -38,7 +38,7 @@ app.post('/webhook', async (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(port)
+app.listen(port);
 
 
 
@@ -48,7 +48,7 @@ function reply(reply_token,menu,uname) {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
-    }
+    };
     let body="";
     let msgtxt = "";
     let assetid = menu.substr(1);
@@ -84,10 +84,10 @@ function reply(reply_token,menu,uname) {
     body = JSON.stringify({
         replyToken: reply_token,
         messages: [msgtxt]
-    })
+    });
 
     console.log('Start Reply body \n');
-    console.log(body+'\n')
+    console.log(body+'\n');
     console.log('End Reply body \n');
 
     request.post({
@@ -108,19 +108,21 @@ function getdispname(uid){
             'Content-Type': 'application/json',
             'Authorization': 'Bearer GBrEiGkGX0EZnU39JQZPJbCx7ui1c1u3/FvRKp3v0tQWEyEQa4Ob1Bgq+ZbjnZbgNqwyZA38gKPU1XC5DIu4VoprUL1cvFWwLDzfwXzP45n/zHRZ+Mi9JYbNuZetPzJKTctCot2iUDqS8B/2w4ZPJwdB04t89/1O/w1cDnyilFU='
         }
-    }       
+    };
      return rp(options)
         .then(function(msgBody){
             return  JSON.parse(msgBody).displayName;
         })
         .catch(function (err){
-        })
+        });
 }
 
 
 
 
 function machinelist(header){
+    var partOfheader = header.substr(1,4);
+
     return {
         "type": "flex",
         "altText": "I-Am-Teemo Flex Message",
@@ -181,7 +183,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-093",
-                        "text": "WF-0093"
+                        "text": "(" +partOfheader+ ")WF-0093"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -347,7 +349,7 @@ function machinelist(header){
               "margin": "none"
             }
           }
-      }
+      };
 }
 
 
@@ -364,5 +366,5 @@ function quickReply() {
                 }
             }]
         }
-     }
-};
+     };
+}
