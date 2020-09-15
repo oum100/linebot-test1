@@ -128,8 +128,6 @@ function getdispname(uid){
 
 
 function machinelist(header,action){
-
-
     return {
         "type": "flex",
         "altText": "I-Am-Teemo Flex Message",
@@ -190,7 +188,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-093",
-                        "text": "[" +action+ "] WF-0093"
+                        "text": "WF-0093"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -202,7 +200,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-095",
-                        "text": "[" +action+ "] WF-0095"
+                        "text": "(" +action+ ") WF-0095"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -214,7 +212,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-097",
-                        "text": "[" +action+ "] WF-0097"
+                        "text": "WF-0097"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -226,7 +224,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-099",
-                        "text": "[" +action+ "] WF-0099"
+                        "text": "WF-0099"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -238,7 +236,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-101",
-                        "text": "[" +action+ "] WF-0101"
+                        "text": "WF-0101"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -250,7 +248,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-103",
-                        "text": "[" +action+ "] WF-0103"
+                        "text": "WF-0103"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -282,7 +280,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "DF-094",
-                        "text": "[" +action+ "] DF-0094"
+                        "text": "DF-0094"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -294,7 +292,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "DF-096",
-                        "text": "[" +action+ "] DF-0096"
+                        "text": "DF-0096"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -306,7 +304,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "DF-098",
-                        "text": "[" +action+ "] DF-0098"
+                        "text": "DF-0098"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -318,7 +316,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "DF-100",
-                        "text": "[" +action+ "] DF-0100"
+                        "text": "DF-0100"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -330,7 +328,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "uri",
                         "label": "DF-102",
-                        "text": "[" +action+ "] DF-0102"
+                        "text": "DF-0102"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -342,7 +340,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "DF-104",
-                        "text": "[" +action+ "] DF-0104"
+                        "text": "DF-0104"
                       },
                       "margin": "sm",
                       "height": "sm",
