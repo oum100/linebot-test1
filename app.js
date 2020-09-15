@@ -40,14 +40,14 @@ app.post('/webhook', async (req, res) => {
 
 app.listen(port);
 
-const machines = [
-  "WF-0093","DF-0094",
-  "WF-0095","DF-0094",
-  "WF-0097","DF-0094",
-  "WF-0099","DF-0100",
-  "WF-0101","DF-0102",
-  "WF-0103","DF-0104"
-];
+// const machines = [
+//   "WF-0093","DF-0094",
+//   "WF-0095","DF-0094",
+//   "WF-0097","DF-0094",
+//   "WF-0099","DF-0100",
+//   "WF-0101","DF-0102",
+//   "WF-0103","DF-0104"
+// ];
 
 
 //Function all.
