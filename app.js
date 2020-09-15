@@ -128,233 +128,233 @@ function getdispname(uid){
 
 
 function machinelist(header){
-    return {
-        "type": "flex",
-        "altText": "I-Am-Teemo Flex Message",
-        "contents": {
-            "type": "bubble",
-            "size": "mega",
-            "direction": "ltr",
-            "header": {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "กรุณาเลือกเครื่องสำหรับ",
-                  "size": "xl",
-                  "color": "#FFFFFF",
-                  "weight": "bold",
-                  "align": "center",
-                  "style": "normal",
-                  "wrap": true
-                },
-                {
-                  "type": "text",
-                  "text": header,
-                  "size": "lg",
-                  "align": "center",
-                  "decoration": "none",
-                  "weight": "bold",
-                  "color": "#FFFFFF"
-                }
-              ],
-              "backgroundColor": "#0f55FE"
-            },
-            "body": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "box",
-                      "layout": "vertical",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "ซักผ้า(Washer)",
-                          "wrap": false,
-                          "align": "center",
-                          "weight": "bold"
-                        }
-                      ],
-                      "margin": "none"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "WF-093",
-                        "text": "WF-0093"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33DDFF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "WF-095",
-                        "text": "WF-0095"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33A5FF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "WF-097",
-                        "text": "WF-0097"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33DDFF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "WF-099",
-                        "text": "WF-0099"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33A5FF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "WF-101",
-                        "text": "WF-0101"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33DDFF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "WF-103",
-                        "text": "WF-0103"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33A5FF"
-                    }
-                  ]
-                },
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "box",
-                      "layout": "vertical",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "อบผ้า (Dryer)",
-                          "wrap": false,
-                          "align": "center",
-                          "weight": "bold"
-                        }
-                      ],
-                      "margin": "none"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "DF-094",
-                        "text": "DF-0094"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33DDFF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "DF-096",
-                        "text": "DF-0096"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33A5FF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "DF-098",
-                        "text": "DF-0098"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33DDFF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "DF-100",
-                        "text": "DF-0100"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33A5FF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "uri",
-                        "label": "DF-102",
-                        "text": "DF-0102"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33DDFF"
-                    },
-                    {
-                      "type": "button",
-                      "action": {
-                        "type": "message",
-                        "label": "DF-104",
-                        "text": "DF-0104"
-                      },
-                      "margin": "sm",
-                      "height": "sm",
-                      "style": "secondary",
-                      "color": "#33A5FF"
-                    }
-                  ]
-                }
-              ],
-              "spacing": "sm",
-              "margin": "none"
-            }
+return {
+    "type": "flex",
+    "altText": "I-Am-Teemo Flex Message",
+    "contents": {
+      "type": "bubble",
+      "size": "mega",
+      "direction": "ltr",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "กรุณาเลือกเครื่องสำหรับ",
+            "size": "xl",
+            "color": "#FFFFFF",
+            "weight": "bold",
+            "align": "center",
+            "style": "normal",
+            "wrap": true
+          },
+          {
+            "type": "text",
+            "text": header,
+            "size": "lg",
+            "align": "center",
+            "decoration": "none",
+            "weight": "bold",
+            "color": "#FFFFFF"
           }
-      };
+        ],
+        "backgroundColor": "#0f55FE"
+      },
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ซักผ้า(Washer)",
+                    "wrap": false,
+                    "align": "center",
+                    "weight": "bold"
+                  }
+                ],
+                "margin": "none"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "WF-093",
+                  "text": "WF-0093"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33DDFF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "WF-095",
+                  "text": "WF-0095"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33A5FF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "WF-097",
+                  "text": "WF-0097"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33DDFF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "WF-099",
+                  "text": "WF-0099"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33A5FF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "WF-101",
+                  "text": "WF-0101"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33DDFF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "WF-103",
+                  "text": "WF-0103"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33A5FF"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อบผ้า (Dryer)",
+                    "wrap": false,
+                    "align": "center",
+                    "weight": "bold"
+                  }
+                ],
+                "margin": "none"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "DF-094",
+                  "text": "DF-0094"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33DDFF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "DF-096",
+                  "text": "DF-0096"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33A5FF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "DF-098",
+                  "text": "DF-0098"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33DDFF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "DF-100",
+                  "text": "DF-0100"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33A5FF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "DF-102",
+                  "text": "DF-0102"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33DDFF"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "DF-104",
+                  "text": "DF-0104"
+                },
+                "margin": "sm",
+                "height": "sm",
+                "style": "secondary",
+                "color": "#33A5FF"
+              }
+            ]
+          }
+        ],
+        "spacing": "sm",
+        "margin": "none"
+      }
+    }
+  };
 }
 
 
