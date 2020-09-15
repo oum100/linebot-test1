@@ -200,7 +200,7 @@ function machinelist(header,action){
                       "action": {
                         "type": "message",
                         "label": "WF-095",
-                        "text": "(" +action+ ") WF-0095"
+                        "text": `(${action})WF-0095`
                       },
                       "margin": "sm",
                       "height": "sm",
