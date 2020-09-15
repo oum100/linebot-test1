@@ -92,7 +92,7 @@ function reply(reply_token,menu,uname) {
         replyToken: reply_token,
         messages: [{
           "type":"text",
-          "text":"\"msgtext\""
+          "text":"\"" +msgtext+ "\""
         }]
     });
 
@@ -100,13 +100,13 @@ function reply(reply_token,menu,uname) {
     console.log(body+'\n');
     console.log('End Reply body \n');
 
-    // request.post({
-    //     url: 'https://api.line.me/v2/bot/message/reply',
-    //     headers: headers,
-    //     body: body
-    // }, (err, res, body) => {
-    //     console.log('status = ' + res.statusCode);
-    // });
+    request.post({
+        url: 'https://api.line.me/v2/bot/message/reply',
+        headers: headers,
+        body: body
+    }, (err, res, body) => {
+        console.log('status = ' + res.statusCode);
+    });
 }
 
 
