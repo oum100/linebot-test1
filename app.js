@@ -40,7 +40,14 @@ app.post('/webhook', async (req, res) => {
 
 app.listen(port);
 
-
+const machines = [
+  "WF-0093","DF-0094",
+  "WF-0095","DF-0094",
+  "WF-0097","DF-0094",
+  "WF-0099","DF-0100",
+  "WF-0101","DF-0102",
+  "WF-0103","DF-0104"
+];
 
 
 //Function all.
@@ -57,17 +64,17 @@ function reply(reply_token,menu,uname) {
         case menu[0] == "N" || menu[0]== "n":
             //console.log('print N');
             //msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Notification");
+            msgtxt = machinelist("Notification","Notify");
             break;
         case menu[0] == "O" || menu[0]== "o":   
             //console.log('print B');
             //msgtxt = 'ใช้บริการ '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Wash & Dry");
+            msgtxt = machinelist("Wash & Dry","Wash&Dry");
             break;
         case menu[0] == "Q" || menu[0]== "q":   
             //console.log('print B');
             //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Booking");
+            msgtxt = machinelist("Booking","Booking");
             break;
         default:
             //msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
@@ -120,8 +127,8 @@ function getdispname(uid){
 
 
 
-function machinelist(header){
-    var partOfheader = header.substr(1,4);
+function machinelist(header,action){
+
 
     return {
         "type": "flex",
@@ -183,7 +190,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-093",
-                        "text": "(" +partOfheader+ ")WF-0093"
+                        "text": "[" +action+ "] WF-0093"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -195,7 +202,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-095",
-                        "text": "WF-0095"
+                        "text": "[" +action+ "] WF-0095"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -207,7 +214,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-097",
-                        "text": "WF-0097"
+                        "text": "[" +action+ "] WF-0097"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -219,7 +226,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-099",
-                        "text": "WF-0099"
+                        "text": "[" +action+ "] WF-0099"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -231,7 +238,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-101",
-                        "text": "WF-0101"
+                        "text": "[" +action+ "] WF-0101"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -243,7 +250,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "WF-103",
-                        "text": "WF-0103"
+                        "text": "[" +action+ "] WF-0103"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -275,7 +282,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "DF-094",
-                        "text": "DF-0094"
+                        "text": "[" +action+ "] DF-0094"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -287,7 +294,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "DF-096",
-                        "text": "DF-0096"
+                        "text": "[" +action+ "] DF-0096"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -299,7 +306,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "DF-098",
-                        "text": "DF-0098"
+                        "text": "[" +action+ "] DF-0098"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -311,7 +318,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "DF-100",
-                        "text": "DF-0100"
+                        "text": "[" +action+ "] DF-0100"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -323,7 +330,7 @@ function machinelist(header){
                       "action": {
                         "type": "uri",
                         "label": "DF-102",
-                        "uri": "http://linecorp.com/"
+                        "text": "[" +action+ "] DF-0102"
                       },
                       "margin": "sm",
                       "height": "sm",
@@ -335,7 +342,7 @@ function machinelist(header){
                       "action": {
                         "type": "message",
                         "label": "DF-104",
-                        "text": "DF-0104"
+                        "text": "[" +action+ "] DF-0104"
                       },
                       "margin": "sm",
                       "height": "sm",
