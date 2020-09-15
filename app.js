@@ -92,7 +92,7 @@ function reply(reply_token,menu,uname) {
         replyToken: reply_token,
         messages: [{
           "type":"text",
-          "text":"\"" +msgtext+ "\""
+          "text":"Hello"
         }]
     });
 
