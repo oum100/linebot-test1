@@ -64,17 +64,17 @@ function reply(reply_token,menu,uname) {
         case menu[0] == "N" || menu[0]== "n":
             //console.log('print N');
             //msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Notification","Notify");
+            msgtxt = machinelist("Notification");
             break;
         case menu[0] == "O" || menu[0]== "o":   
             //console.log('print B');
             //msgtxt = 'ใช้บริการ '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Wash & Dry","Wash&Dry");
+            msgtxt = machinelist("Wash & Dry");
             break;
         case menu[0] == "Q" || menu[0]== "q":   
             //console.log('print B');
             //msgtxt = 'จองคิวเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            msgtxt = machinelist("Booking","Booking");
+            msgtxt = machinelist("Booking");
             break;
         default:
             //msgtxt = 'ไม่พบคำสั่ง กรุณาใส่คำสั่ง (N=แจ้งเตือน,B=จองคิว) และตามด้วยหมายเลขเครื่อง 3 หลัก เช่น N100 หรือ B440';
@@ -127,7 +127,7 @@ function getdispname(uid){
 
 
 
-function machinelist(header,action){
+function machinelist(header){
     return {
         "type": "flex",
         "altText": "I-Am-Teemo Flex Message",
