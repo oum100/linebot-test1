@@ -329,7 +329,7 @@ return {
               {
                 "type": "button",
                 "action": {
-                  "type": "uri",
+                  "type": "message",
                   "label": "DF-102",
                   "text": "DF-0102"
                 },
