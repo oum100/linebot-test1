@@ -90,11 +90,11 @@ function reply(reply_token,menu,uname) {
 
     body = JSON.stringify({
         replyToken: reply_token,
-        messages: [{
-          "type":"text",
-          //"text":`"Hello" ${msgtxt}`
-          "text": msgtxt
-        }]
+        messages: [ `${msgtxt}` ]
+        // messages: [{
+        //   "type":"text",
+        //   "text":`"Hello" ${msgtxt}`
+        // }]
     });
 
     console.log('Start Reply body \n');
