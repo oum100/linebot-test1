@@ -90,7 +90,7 @@ function reply(reply_token,menu,uname) {
 
     body = JSON.stringify({
         replyToken: reply_token,
-        messages: [ `${msgtxt}` ]
+        messages: [{ msgtxt }]
         // messages: [{
         //   "type":"text",
         //   "text":`"Hello" ${msgtxt}`
