@@ -63,8 +63,8 @@ function reply(reply_token,menu,uname) {
     switch (true){
         case menu[0] == "N" || menu[0]== "n":
             //console.log('print N');
-            msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
-            //msgtxt = machinelist("Notification");
+            //msgtxt = 'ตั้งแจ้งเตือนเครื่อง '+ assetid + ' ให้คุณ \"' + uname + '\" เรียบร้อย';
+            msgtxt = machinelist("Notification");
             break;
         case menu[0] == "O" || menu[0]== "o":   
             //console.log('print B');
@@ -192,7 +192,7 @@ return {
                 "action": {
                   "type": "message",
                   "label": "WF-093",
-                  "text": "WF-0093"
+                  "text": `"(${header})WF-0093"`
                 },
                 "margin": "sm",
                 "height": "sm",
